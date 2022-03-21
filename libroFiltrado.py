@@ -4,8 +4,9 @@ import xml.etree.ElementTree
 def  sacarTodos():
     contentXML = '<libreria>'
     libreria = read('datos/libros.xml')
+    tipoLibro = libreria.find('libro').tag
     for libro in libreria:
-        tipoLibro = libreria.find('libro').tag
+    
         atribISBN = libro.attrib['isbn']
         contentXML += f'<{tipoLibro} isbn={atribISBN}>'
     contentXML += '</libreria>'
