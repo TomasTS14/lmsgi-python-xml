@@ -1,5 +1,5 @@
 from utils import read,write
-from libro import Libro
+from libro import *
 
 listaLibros=[]
 
@@ -12,4 +12,11 @@ def agregar_a_Lista():
         listaLibros.append(libroAux)
 
 agregar_a_Lista()
-print(listaLibros)
+
+def sacarLista():
+    lista = '['
+    for libro in listaLibros:
+        lista += str(Libro(libro).getISBN) + ' '
+    lista += ']' 
+    print(lista)
+sacarLista()
